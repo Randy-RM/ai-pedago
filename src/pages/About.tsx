@@ -1,3 +1,5 @@
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
@@ -7,7 +9,8 @@ const About = () => {
     {
       name: "Dr. Sophie Martin",
       role: "CEO & Fondatrice",
-      description: "Docteure en sciences de l'éducation, 15 ans d'expérience en ingénierie pédagogique",
+      description:
+        "Docteure en sciences de l'éducation, 15 ans d'expérience en ingénierie pédagogique",
       initials: "SM",
       gradient: "bg-gradient-to-br from-blue-400 to-blue-600",
     },
@@ -38,17 +41,20 @@ const About = () => {
     {
       icon: "🎯",
       title: "Excellence pédagogique",
-      description: "Nous plaçons la qualité de l'enseignement au cœur de notre mission.",
+      description:
+        "Nous plaçons la qualité de l'enseignement au cœur de notre mission.",
     },
     {
       icon: "🤝",
       title: "Collaboration",
-      description: "Nous croyons en la force du travail d'équipe et du partage de connaissances.",
+      description:
+        "Nous croyons en la force du travail d'équipe et du partage de connaissances.",
     },
     {
       icon: "💡",
       title: "Innovation",
-      description: "Nous explorons constamment de nouvelles façons d'améliorer l'apprentissage.",
+      description:
+        "Nous explorons constamment de nouvelles façons d'améliorer l'apprentissage.",
     },
     {
       icon: "🌍",
@@ -58,15 +64,33 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2023", event: "Lancement d'IA Pedago", detail: "Début de l'aventure avec 50 utilisateurs pilotes" },
-    { year: "2024", event: "1000 formateurs", detail: "Dépassement du cap des 1000 utilisateurs actifs" },
-    { year: "2024", event: "Partenariats LMS", detail: "Intégrations avec Moodle, Canvas et Teams" },
-    { year: "2025", event: "Levée de fonds", detail: "2M€ pour accélérer le développement" },
+    {
+      year: "2023",
+      event: "Lancement d'IA Pedago",
+      detail: "Début de l'aventure avec 50 utilisateurs pilotes",
+    },
+    {
+      year: "2024",
+      event: "1000 formateurs",
+      detail: "Dépassement du cap des 1000 utilisateurs actifs",
+    },
+    {
+      year: "2024",
+      event: "Partenariats LMS",
+      detail: "Intégrations avec Moodle, Canvas et Teams",
+    },
+    {
+      year: "2025",
+      event: "Levée de fonds",
+      detail: "2M€ pour accélérer le développement",
+    },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -91,10 +115,11 @@ const About = () => {
             <div className="prose prose-lg max-w-none text-gray-600">
               <p className="mb-4">
                 IA Pedago est née d'un constat simple : créer des contenus
-                pédagogiques de qualité prend énormément de temps. Les formateurs
-                et enseignants passent des heures à concevoir, rédiger et adapter
-                leurs cours alors qu'ils pourraient se concentrer sur ce qui
-                compte vraiment : l'accompagnement de leurs apprenants.
+                pédagogiques de qualité prend énormément de temps. Les
+                formateurs et enseignants passent des heures à concevoir,
+                rédiger et adapter leurs cours alors qu'ils pourraient se
+                concentrer sur ce qui compte vraiment : l'accompagnement de
+                leurs apprenants.
               </p>
               <p className="mb-4">
                 En 2023, une équipe de pédagogues et d'experts en intelligence
@@ -116,9 +141,7 @@ const About = () => {
       <section className="py-20 bg-gray-50">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-600 mb-4">
-              L'équipe
-            </h2>
+            <h2 className="text-4xl font-bold text-gray-600 mb-4">L'équipe</h2>
             <p className="text-xl text-gray-600">
               Des experts passionnés par l'éducation et la technologie
             </p>
@@ -127,7 +150,9 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <Card key={index} className="p-6 text-center">
-                <div className={`w-32 h-32 ${member.gradient} rounded-full mx-auto mb-4 flex items-center justify-center`}>
+                <div
+                  className={`w-32 h-32 ${member.gradient} rounded-full mx-auto mb-4 flex items-center justify-center`}
+                >
                   <span className="text-4xl font-bold text-white">
                     {member.initials}
                   </span>
@@ -212,9 +237,7 @@ const About = () => {
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center text-white max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-4">
-              Rejoignez l'aventure
-            </h2>
+            <h2 className="text-4xl font-bold mb-4">Rejoignez l'aventure</h2>
             <p className="text-xl mb-8 text-white/90">
               Nous recherchons des talents passionnés pour nous aider à
               transformer l'éducation. Consultez nos offres d'emploi.
@@ -229,6 +252,8 @@ const About = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

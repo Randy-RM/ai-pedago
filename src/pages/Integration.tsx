@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
@@ -93,22 +95,26 @@ const Integration = () => {
       {
         step: "1",
         title: "Installation du plugin",
-        description: "Téléchargez et installez le plugin IA Pedago pour Moodle depuis le répertoire officiel.",
+        description:
+          "Téléchargez et installez le plugin IA Pedago pour Moodle depuis le répertoire officiel.",
       },
       {
         step: "2",
         title: "Configuration de l'API",
-        description: "Générez une clé API dans votre compte IA Pedago et configurez la connexion.",
+        description:
+          "Générez une clé API dans votre compte IA Pedago et configurez la connexion.",
       },
       {
         step: "3",
         title: "Synchronisation",
-        description: "Synchronisez vos cours, utilisateurs et catégories en un clic.",
+        description:
+          "Synchronisez vos cours, utilisateurs et catégories en un clic.",
       },
       {
         step: "4",
         title: "Activation",
-        description: "Activez les fonctionnalités IA directement dans l'éditeur Moodle.",
+        description:
+          "Activez les fonctionnalités IA directement dans l'éditeur Moodle.",
       },
     ],
     canvas: [
@@ -120,12 +126,14 @@ const Integration = () => {
       {
         step: "2",
         title: "Autorisation OAuth",
-        description: "Autorisez IA Pedago à accéder à votre instance Canvas via OAuth 2.0.",
+        description:
+          "Autorisez IA Pedago à accéder à votre instance Canvas via OAuth 2.0.",
       },
       {
         step: "3",
         title: "Configuration des permissions",
-        description: "Définissez les permissions d'accès pour vos formateurs et apprenants.",
+        description:
+          "Définissez les permissions d'accès pour vos formateurs et apprenants.",
       },
       {
         step: "4",
@@ -137,12 +145,14 @@ const Integration = () => {
       {
         step: "1",
         title: "Installation depuis Teams",
-        description: "Ajoutez l'application IA Pedago depuis le store Microsoft Teams.",
+        description:
+          "Ajoutez l'application IA Pedago depuis le store Microsoft Teams.",
       },
       {
         step: "2",
         title: "Connexion au compte",
-        description: "Liez votre compte IA Pedago avec Microsoft Teams via SSO.",
+        description:
+          "Liez votre compte IA Pedago avec Microsoft Teams via SSO.",
       },
       {
         step: "3",
@@ -157,7 +167,8 @@ const Integration = () => {
     ],
   };
 
-  const [selectedLMS, setSelectedLMS] = useState<keyof typeof integrationSteps>("moodle");
+  const [selectedLMS, setSelectedLMS] =
+    useState<keyof typeof integrationSteps>("moodle");
 
   const successStories = [
     {
@@ -191,7 +202,9 @@ const Integration = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -235,7 +248,9 @@ const Integration = () => {
                 key={index}
                 className="flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow cursor-pointer"
               >
-                <div className={`text-6xl mb-4 ${partner.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white`}>
+                <div
+                  className={`text-6xl mb-4 ${partner.color} w-20 h-20 rounded-2xl flex items-center justify-center text-white`}
+                >
                   {partner.logo}
                 </div>
                 <span className="text-sm font-semibold text-gray-600">
@@ -261,7 +276,10 @@ const Integration = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {integrationFeatures.map((feature, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-shadow">
+              <Card
+                key={index}
+                className="p-8 hover:shadow-xl transition-shadow"
+              >
                 <div className="text-5xl mb-4">{feature.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-600 mb-3">
                   {feature.title}
@@ -454,6 +472,8 @@ const Integration = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

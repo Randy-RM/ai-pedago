@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
@@ -7,7 +9,13 @@ const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("Tous");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const categories = ["Tous", "Pédagogie", "Formation", "Tutoriel", "Innovation"];
+  const categories = [
+    "Tous",
+    "Pédagogie",
+    "Formation",
+    "Tutoriel",
+    "Innovation",
+  ];
 
   const getRandomGradient = (index: number) => {
     const gradients = [
@@ -143,7 +151,9 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -215,7 +225,11 @@ const Blog = () => {
             </div>
             <Card className="overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className={`${getRandomGradient(0)} h-64 lg:h-full flex items-center justify-center`}>
+                <div
+                  className={`${getRandomGradient(
+                    0
+                  )} h-64 lg:h-full flex items-center justify-center`}
+                >
                   <span className="text-8xl font-bold text-white opacity-20">
                     {featuredPost.category[0]}
                   </span>
@@ -229,7 +243,11 @@ const Blog = () => {
                   </h2>
                   <p className="text-gray-600 mb-6">{featuredPost.excerpt}</p>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-12 h-12 ${getRandomGradient(0)} rounded-full flex items-center justify-center`}>
+                    <div
+                      className={`w-12 h-12 ${getRandomGradient(
+                        0
+                      )} rounded-full flex items-center justify-center`}
+                    >
                       <span className="text-lg font-bold text-white">
                         {getInitials(featuredPost.author)}
                       </span>
@@ -337,7 +355,8 @@ const Blog = () => {
               Recevez nos derniers articles
             </h2>
             <p className="text-xl mb-8 text-white/90">
-              Inscrivez-vous à notre newsletter pour ne rien manquer de l'actualité de l'IA pédagogique.
+              Inscrivez-vous à notre newsletter pour ne rien manquer de
+              l'actualité de l'IA pédagogique.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
@@ -356,6 +375,8 @@ const Blog = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

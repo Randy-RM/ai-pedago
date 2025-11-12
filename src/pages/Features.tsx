@@ -1,3 +1,5 @@
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
@@ -138,7 +140,9 @@ const Features = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -179,7 +183,10 @@ const Features = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {detailedFeatures.map((feature, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-shadow">
+              <Card
+                key={index}
+                className="p-8 hover:shadow-xl transition-shadow"
+              >
                 <div className="text-5xl mb-4">{feature.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-600 mb-3">
                   {feature.title}
@@ -338,6 +345,8 @@ const Features = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

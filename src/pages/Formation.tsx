@@ -1,3 +1,5 @@
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
@@ -68,8 +70,7 @@ const Formation = () => {
     {
       icon: "🚀",
       title: "Créer son premier cours avec IA Pedago",
-      description:
-        "Guidé pas à pas, créez un cours complet du début à la fin.",
+      description: "Guidé pas à pas, créez un cours complet du début à la fin.",
       duration: "1h30",
     },
     {
@@ -82,8 +83,7 @@ const Formation = () => {
     {
       icon: "🔗",
       title: "Intégrer avec votre LMS",
-      description:
-        "Connectez IA Pedago à Moodle, Canvas ou votre LMS préféré.",
+      description: "Connectez IA Pedago à Moodle, Canvas ou votre LMS préféré.",
       duration: "1h",
     },
     {
@@ -162,7 +162,9 @@ const Formation = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -328,7 +330,10 @@ const Formation = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {learningModules.map((module, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg transition-shadow"
+              >
                 <div className="text-4xl mb-4">{module.icon}</div>
                 <h3 className="text-xl font-bold text-gray-600 mb-2">
                   {module.title}
@@ -384,9 +389,7 @@ const Formation = () => {
                     <h3 className="text-xl font-bold text-gray-600 mb-2">
                       {webinar.title}
                     </h3>
-                    <p className="text-gray-600">
-                      Animé par {webinar.speaker}
-                    </p>
+                    <p className="text-gray-600">Animé par {webinar.speaker}</p>
                     <div className="mt-2 text-sm text-gray-500">
                       {webinar.attendees}/{webinar.spots} inscrits
                     </div>
@@ -415,7 +418,10 @@ const Formation = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {resources.map((resource, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg transition-shadow"
+              >
                 <div className="text-5xl mb-4">{resource.icon}</div>
                 <div className="text-xs text-primary font-medium mb-2">
                   {resource.type}
@@ -459,6 +465,8 @@ const Formation = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { useState, FormEvent } from "react";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
@@ -23,7 +25,9 @@ const Contact = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({
       ...formData,
@@ -55,21 +59,26 @@ const Contact = () => {
   const faqs = [
     {
       question: "Comment démarrer avec IA Pedago ?",
-      answer: "Créez simplement un compte gratuit et commencez votre essai de 14 jours. Notre équipe vous accompagne dans la prise en main.",
+      answer:
+        "Créez simplement un compte gratuit et commencez votre essai de 14 jours. Notre équipe vous accompagne dans la prise en main.",
     },
     {
       question: "Proposez-vous des démonstrations ?",
-      answer: "Oui ! Réservez une démo personnalisée avec notre équipe pour découvrir toutes les fonctionnalités.",
+      answer:
+        "Oui ! Réservez une démo personnalisée avec notre équipe pour découvrir toutes les fonctionnalités.",
     },
     {
       question: "Quel est le délai de réponse du support ?",
-      answer: "Support email : 24h • Support prioritaire (plans payants) : 4h • Chat : immédiat",
+      answer:
+        "Support email : 24h • Support prioritaire (plans payants) : 4h • Chat : immédiat",
     },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      <Header />
+      <main>
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 to-white py-20">
         <Container maxWidth="7xl" paddingX="lg">
           <div className="text-center max-w-4xl mx-auto">
@@ -77,7 +86,8 @@ const Contact = () => {
               Contactez-nous
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Notre équipe est là pour répondre à toutes vos questions. Nous vous répondons généralement sous 24 heures.
+              Notre équipe est là pour répondre à toutes vos questions. Nous
+              vous répondons généralement sous 24 heures.
             </p>
           </div>
         </Container>
@@ -88,12 +98,17 @@ const Contact = () => {
         <Container maxWidth="7xl" paddingX="lg">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactMethods.map((method, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow">
+              <Card
+                key={index}
+                className="p-8 text-center hover:shadow-lg transition-shadow"
+              >
                 <div className="text-6xl mb-4">{method.icon}</div>
                 <h3 className="text-xl font-bold text-gray-600 mb-2">
                   {method.title}
                 </h3>
-                <p className="text-primary font-semibold mb-2">{method.detail}</p>
+                <p className="text-primary font-semibold mb-2">
+                  {method.detail}
+                </p>
                 <p className="text-sm text-gray-600">{method.description}</p>
               </Card>
             ))}
@@ -205,7 +220,12 @@ const Contact = () => {
                     ></textarea>
                   </div>
 
-                  <Button type="submit" variant="secondary" size="lg" className="w-full">
+                  <Button
+                    type="submit"
+                    variant="secondary"
+                    size="lg"
+                    className="w-full"
+                  >
                     Envoyer le message
                   </Button>
                 </form>
@@ -289,6 +309,8 @@ const Contact = () => {
           </div>
         </Container>
       </section>
+      </main>
+      <Footer />
     </div>
   );
 };

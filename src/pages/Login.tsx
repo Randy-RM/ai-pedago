@@ -1,4 +1,6 @@
 import { useState, FormEvent } from "react";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
 
@@ -14,8 +16,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/10 to-white flex items-center justify-center py-12">
-      <Container maxWidth="7xl" paddingX="lg">
+    <div className="min-h-screen">
+      <Header />
+      <main className="bg-gradient-to-br from-primary/10 to-white flex items-center justify-center py-12">
+        <Container maxWidth="7xl" paddingX="lg">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left Side - Illustration */}
           <div className="hidden lg:block">
@@ -218,7 +222,12 @@ const Login = () => {
                 </a>
               </div>
 
-              <Button type="submit" variant="secondary" size="lg" className="w-full">
+              <Button
+                type="submit"
+                variant="secondary"
+                size="lg"
+                className="w-full"
+              >
                 Se connecter
               </Button>
             </form>
@@ -226,7 +235,10 @@ const Login = () => {
             <div className="mt-6 text-center">
               <p className="text-gray-600">
                 Pas encore de compte ?{" "}
-                <a href="/signup" className="text-primary font-medium hover:text-primary/80">
+                <a
+                  href="/signup"
+                  className="text-primary font-medium hover:text-primary/80"
+                >
                   S'inscrire gratuitement
                 </a>
               </p>
@@ -234,6 +246,8 @@ const Login = () => {
           </div>
         </div>
       </Container>
+      </main>
+      <Footer />
     </div>
   );
 };
