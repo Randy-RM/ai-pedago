@@ -4,7 +4,7 @@ import Container from "../ui/Container";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <Container maxWidth="7xl" paddingX="xl" paddingY="xl">
+      <Container maxWidth="7xl" paddingX="lg" paddingY="xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -17,8 +17,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt.
+              L'assistant IA qui révolutionne la conception pédagogique. Créez,
+              scénarisez et évaluez avec l'intelligence artificielle.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-primary transition-colors">
@@ -53,14 +53,14 @@ const Footer = () => {
 
           {/* All Product */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Tous les produits</h3>
+            <h3 className="text-white font-semibold mb-4">Fonctionnalités</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/products"
+                  to="/features"
                   className="hover:text-primary transition-colors"
                 >
-                  Produits
+                  Aide à la rédaction
                 </Link>
               </li>
               <li>
@@ -68,7 +68,7 @@ const Footer = () => {
                   to="/features"
                   className="hover:text-primary transition-colors"
                 >
-                  Fonctionnalités
+                  Création d'activités
                 </Link>
               </li>
               <li>
@@ -76,7 +76,7 @@ const Footer = () => {
                   to="/integrations"
                   className="hover:text-primary transition-colors"
                 >
-                  Intégrations
+                  Intégration LMS
                 </Link>
               </li>
               <li>
@@ -84,7 +84,7 @@ const Footer = () => {
                   to="/pricing"
                   className="hover:text-primary transition-colors"
                 >
-                  Tarification
+                  Tarifs
                 </Link>
               </li>
             </ul>
@@ -92,38 +92,38 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Entreprise</h3>
+            <h3 className="text-white font-semibold mb-4">Formation</h3>
             <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/formation"
+                  className="hover:text-primary transition-colors"
+                >
+                  Module IA génératives
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/formation"
+                  className="hover:text-primary transition-colors"
+                >
+                  Pour formateurs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/formation"
+                  className="hover:text-primary transition-colors"
+                >
+                  Pour apprenants
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/about"
                   className="hover:text-primary transition-colors"
                 >
                   À propos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/careers"
-                  className="hover:text-primary transition-colors"
-                >
-                  Carrières
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/press"
-                  className="hover:text-primary transition-colors"
-                >
-                  Presse
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/privacy"
-                  className="hover:text-primary transition-colors"
-                >
-                  Confidentialité
                 </Link>
               </li>
             </ul>
@@ -151,18 +151,18 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to="/docs"
                   className="hover:text-primary transition-colors"
                 >
-                  Contact
+                  Documentation
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/newsletter"
+                  to="/contact"
                   className="hover:text-primary transition-colors"
                 >
-                  Newsletter
+                  Contact
                 </Link>
               </li>
             </ul>

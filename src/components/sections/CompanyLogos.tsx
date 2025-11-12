@@ -5,7 +5,7 @@ const CompanyLogos = () => {
 
   return (
     <section className="py-16 bg-white">
-      <Container maxWidth="7xl" paddingX="xl">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="text-center mb-12">
           <p className="text-gray-600 font-medium">
             Over 32K+ software businesses growing with AR Shakir

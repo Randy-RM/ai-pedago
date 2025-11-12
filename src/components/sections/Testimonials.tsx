@@ -2,30 +2,54 @@ import { useState } from "react";
 import Container from "../ui/Container";
 
 const Testimonials = () => {
+  // Fonction pour générer un dégradé aléatoire
+  const getRandomGradient = (index: number) => {
+    const gradients = [
+      "bg-gradient-to-br from-primary to-primary/60",
+      "bg-gradient-to-br from-blue-500 to-blue-300",
+      "bg-gradient-to-br from-purple-500 to-pink-400",
+      "bg-gradient-to-br from-orange-500 to-yellow-400",
+      "bg-gradient-to-br from-green-500 to-teal-400",
+      "bg-gradient-to-br from-red-500 to-pink-500",
+      "bg-gradient-to-br from-indigo-500 to-purple-400",
+      "bg-gradient-to-br from-cyan-500 to-blue-400",
+    ];
+    return gradients[index % gradients.length];
+  };
+
+  // Fonction pour obtenir les initiales
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase();
+  };
+
   const testimonials = [
     {
       id: 1,
-      name: "Jill Russell",
-      role: "CEO, Company",
-      image: "https://via.placeholder.com/80",
+      name: "Marie Dubois",
+      role: "Formatrice Digital Learning, Université Lyon 2",
+      image: "",
       rating: 5,
-      text: "In quo autem lorem ipsum dolor sit amet. Really like you all of the life less saver. Amazing just keep it up.",
+      text: "IA Pedago a transformé ma façon de créer mes cours. En quelques minutes, je génère des activités pédagogiques pertinentes et adaptées au niveau de mes étudiants. Un gain de temps considérable !",
     },
     {
       id: 2,
-      name: "John Doe",
-      role: "CTO, Tech Corp",
-      image: "https://via.placeholder.com/80",
+      name: "Thomas Martin",
+      role: "Responsable Formation, Groupe EdTech",
+      image: "",
       rating: 5,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      text: "L'intégration du chatbot tuteur dans notre LMS a révolutionné l'accompagnement de nos apprenants. Ils obtiennent des réponses instantanées et personnalisées 24/7.",
     },
     {
       id: 3,
-      name: "Jane Smith",
-      role: "Marketing Director",
-      image: "https://via.placeholder.com/80",
+      name: "Sophie Laurent",
+      role: "Ingénieure pédagogique, Centre de formation",
+      image: "",
       rating: 5,
-      text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      text: "Le module de formation aux IA génératives est excellent. Mes collègues formateurs ont rapidement adopté l'outil et créent maintenant des contenus de qualité professionnelle.",
     },
   ];
 
@@ -43,10 +67,10 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 bg-white">
-      <Container maxWidth="7xl" paddingX="xl">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-600 mb-4">
-            Check what our clients are saying
+            Ils utilisent déjà IA Pedago
           </h2>
         </div>
 
@@ -57,11 +81,23 @@ const Testimonials = () => {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 {/* Image */}
                 <div className="flex-shrink-0">
-                  <img
-                    src={testimonials[currentIndex].image}
-                    alt={testimonials[currentIndex].name}
-                    className="w-32 h-32 rounded-full object-cover border-4 border-primary/20"
-                  />
+                  {testimonials[currentIndex].image ? (
+                    <img
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].name}
+                      className="w-32 h-32 rounded-full object-cover border-4 border-primary/20"
+                    />
+                  ) : (
+                    <div
+                      className={`w-32 h-32 rounded-full border-4 border-primary/20 ${getRandomGradient(
+                        currentIndex
+                      )} flex items-center justify-center`}
+                    >
+                      <span className="text-white text-4xl font-bold">
+                        {getInitials(testimonials[currentIndex].name)}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}

@@ -2,69 +2,93 @@ import Card from "../ui/Card";
 import Container from "../ui/Container";
 
 const BlogPosts = () => {
+  // Fonction pour générer un dégradé aléatoire
+  const getRandomGradient = (index: number) => {
+    const gradients = [
+      "bg-gradient-to-br from-primary to-primary/60",
+      "bg-gradient-to-br from-blue-500 to-blue-300",
+      "bg-gradient-to-br from-purple-500 to-pink-400",
+      "bg-gradient-to-br from-orange-500 to-yellow-400",
+      "bg-gradient-to-br from-green-500 to-teal-400",
+      "bg-gradient-to-br from-red-500 to-pink-500",
+      "bg-gradient-to-br from-indigo-500 to-purple-400",
+      "bg-gradient-to-br from-cyan-500 to-blue-400",
+    ];
+    return gradients[index % gradients.length];
+  };
+
+  // Fonction pour obtenir les initiales
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase();
+  };
+
   const posts = [
     {
-      image: "https://via.placeholder.com/400x300",
+      image: "",
       date: "22 Oct 2024",
-      category: "Business",
-      title: "Workflow upgraded-see what's new in managing work. Today!",
+      category: "Pédagogie",
+      title: "Comment l'IA révolutionne la création de contenus pédagogiques",
       excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
+        "Découvrez comment les formateurs gagnent jusqu'à 70% de temps dans la création de leurs cours grâce à l'IA.",
       author: {
-        name: "John Carter",
-        avatar: "https://via.placeholder.com/40",
+        name: "Marie Dubois",
+        avatar: "",
       },
     },
     {
-      image: "https://via.placeholder.com/400x300",
+      image: "",
       date: "20 Oct 2024",
-      category: "Technology",
-      title: "In charge whole Manage the team. Today!",
+      category: "Formation",
+      title: "Les meilleures pratiques pour scénariser un MOOC avec l'IA",
       excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
+        "Guide complet pour créer des parcours d'apprentissage engageants avec l'assistance de l'intelligence artificielle.",
       author: {
-        name: "Jane Doe",
-        avatar: "https://via.placeholder.com/40",
+        name: "Thomas Martin",
+        avatar: "",
       },
     },
     {
-      image: "https://via.placeholder.com/400x300",
+      image: "",
       date: "18 Oct 2024",
-      category: "Marketing",
-      title: "Things to do before and after we start development project",
+      category: "Tutoriel",
+      title: "Intégrer un chatbot tuteur dans votre LMS en 5 étapes",
       excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
+        "Suivez notre tutoriel pas à pas pour déployer un assistant IA dans votre plateforme de formation.",
       author: {
-        name: "Mike Johnson",
-        avatar: "https://via.placeholder.com/40",
+        name: "Sophie Laurent",
+        avatar: "",
       },
     },
     {
-      image: "https://via.placeholder.com/400x300",
+      image: "",
       date: "15 Oct 2024",
-      category: "Design",
-      title: "Things we must avoid during product development",
+      category: "Innovation",
+      title: "L'avenir de l'évaluation pédagogique assistée par IA",
       excerpt:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.",
+        "Comment l'IA transforme la création et la correction d'évaluations pour un apprentissage plus personnalisé.",
       author: {
-        name: "Sarah Williams",
-        avatar: "https://via.placeholder.com/40",
+        name: "Lucas Bernard",
+        avatar: "",
       },
     },
   ];
 
   return (
     <section className="py-20 bg-gray-50">
-      <Container maxWidth="7xl" paddingX="xl">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold text-gray-600">
-            Our Latest Blog Posts
+            Nos derniers articles
           </h2>
           <a
             href="/blog"
             className="text-primary font-medium hover:underline inline-flex items-center"
           >
-            View all posts
+            Voir tous
             <svg
               className="w-5 h-5 ml-2"
               fill="none"
@@ -85,11 +109,24 @@ const BlogPosts = () => {
           {posts.map((post, index) => (
             <Card key={index} hover className="overflow-hidden p-0">
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                />
+                {post.image ? (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                ) : (
+                  <div
+                    className={`w-full h-full ${getRandomGradient(
+                      index
+                    )} flex items-center justify-center`}
+                  >
+                    <span className="text-white text-6xl font-bold opacity-20">
+                      {/* {post.category.charAt(0)} */}
+                      Article
+                    </span>
+                  </div>
+                )}
                 <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-xs font-medium text-primary">
                   {post.category}
                 </div>
@@ -118,11 +155,23 @@ const BlogPosts = () => {
                   {post.excerpt}
                 </p>
                 <div className="flex items-center pt-4 border-t border-gray-100">
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="w-8 h-8 rounded-full mr-3"
-                  />
+                  {post.author.avatar ? (
+                    <img
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="w-8 h-8 rounded-full mr-3"
+                    />
+                  ) : (
+                    <div
+                      className={`w-8 h-8 rounded-full mr-3 ${getRandomGradient(
+                        index + 100
+                      )} flex items-center justify-center`}
+                    >
+                      <span className="text-white text-xs font-bold">
+                        {getInitials(post.author.name)}
+                      </span>
+                    </div>
+                  )}
                   <span className="text-sm font-medium text-gray-700">
                     {post.author.name}
                   </span>

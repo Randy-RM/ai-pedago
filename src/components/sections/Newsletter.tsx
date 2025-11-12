@@ -19,14 +19,14 @@ const Newsletter = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
-      <Container maxWidth="7xl" paddingX="xl">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="max-w-3xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-4">
-            Download our app and start your free trail to get started today!
+            Commencez votre essai gratuit dès aujourd'hui !
           </h2>
           <p className="text-xl mb-8 text-primary-100">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt.
+            Découvrez comment l'IA peut révolutionner votre enseignement. Aucune
+            carte de crédit requise.
           </p>
 
           <form
@@ -37,42 +37,29 @@ const Newsletter = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
+              placeholder="Votre adresse email"
               required
               className="w-full px-6 py-3 rounded-lg text-gray-600 focus:outline-none focus:ring-2 focus:ring-white"
             />
             <Button
               type="submit"
-              variant="secondary"
+              variant="outline"
               size="md"
-              className="bg-white text-primary hover:bg-gray-100 whitespace-nowrap"
+              className="!bg-white !text-gray-600 !border-white hover:!bg-primary hover:!text-white hover:!border-white whitespace-nowrap transition-all"
             >
-              Get Started
+              Démarrer
             </Button>
           </form>
 
           {submitted && (
             <p className="text-white font-medium animate-pulse">
-              Thank you for subscribing!
+              Merci pour votre inscription !
             </p>
           )}
 
-          <div className="flex justify-center gap-4 mt-8">
-            <a href="#" className="inline-block">
-              <img
-                src="https://via.placeholder.com/150x50/1F2937/FFFFFF?text=App+Store"
-                alt="App Store"
-                className="h-12 rounded-lg"
-              />
-            </a>
-            <a href="#" className="inline-block">
-              <img
-                src="https://via.placeholder.com/150x50/1F2937/FFFFFF?text=Google+Play"
-                alt="Google Play"
-                className="h-12 rounded-lg"
-              />
-            </a>
-          </div>
+          <p className="text-sm text-white/80 mt-4">
+            Rejoignez plus de 1000 formateurs qui utilisent déjà IA Pedago
+          </p>
         </div>
       </Container>
     </section>

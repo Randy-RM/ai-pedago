@@ -3,27 +3,45 @@ import Container from "../ui/Container";
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20">
-      <Container maxWidth="7xl" paddingX="xl">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-15">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Product Growth Solution in Single Platform
+              Assistant IA pour la Conception Pédagogique
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-600 mb-6 leading-tight">
-              Managing business payments has never been easier
+              Révolutionnez l'enseignement
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Créez, scénarisez et évaluez vos contenus pédagogiques en un temps
+              record grâce à notre assistant IA dédié aux formateurs et
+              enseignants.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button variant="secondary" size="lg">
-                Get Started
+                Commencer
               </Button>
-              <Button variant="outline" size="lg">
-                Learn More
+              <Button
+                variant="outline"
+                size="lg"
+                className="inline-flex items-center gap-2 !bg-transparent !border-0 !text-primary hover:!bg-transparent"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                  />
+                </svg>
+                Découvrir
               </Button>
             </div>
             <div className="flex items-center space-x-4 text-sm text-gray-600">
@@ -39,7 +57,7 @@ const Hero = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Free Register
+                Essai gratuit
               </div>
               <div className="flex items-center">
                 <svg
@@ -53,52 +71,46 @@ const Hero = () => {
                     clipRule="evenodd"
                   />
                 </svg>
-                Great Service
+                Formation incluse
               </div>
             </div>
           </div>
 
           {/* Right Content - Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl p-8 backdrop-blur-sm">
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <div className="space-y-4">
-                  <div className="h-48 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-24 h-24 bg-primary/10 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <svg
-                          className="w-12 h-12 text-primary"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-gray-500 font-medium">
-                        Dashboard Preview
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                    <span className="text-sm font-medium text-gray-600">
-                      Monthly Revenue
-                    </span>
-                    <span className="text-lg font-bold text-primary">
-                      $52,897
-                    </span>
+            {/* <div className="bg-gradient-to-br from-primary/20 to-primary/10 rounded-3xl p-8 backdrop-blur-sm">
+              <div className="">
+                <div className="">
+                  <div className="rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center">
+                    <img
+                      src="/images/ai-pedago-mooc-img.png"
+                      alt="Dashboard Preview"
+                      className="w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        e.currentTarget.parentElement!.innerHTML =
+                          '<div class="text-center p-8"><p class="text-gray-500 font-medium">📊 Veuillez ajouter l\'image ai-pedago-mooc-img.png dans public/images/</p></div>';
+                      }}
+                    />
                   </div>
                 </div>
               </div>
+            </div> */}
+            <div className="rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center">
+              <img
+                src="/images/ai-pedago-mooc-img.png"
+                alt="Dashboard Preview"
+                className="w-full h-auto object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                  e.currentTarget.parentElement!.innerHTML =
+                    '<div class="text-center p-8"><p class="text-gray-500 font-medium">📊 Veuillez ajouter l\'image ai-pedago-mooc-img.png dans public/images/</p></div>';
+                }}
+              />
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg">
+            <div className="absolute top-20 -right-4 bg-white p-4 rounded-xl shadow-lg">
               <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-medium">Live</span>

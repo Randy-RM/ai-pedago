@@ -10,64 +10,68 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Free",
-      description: "Have a go and test your superpowers",
+      name: "Découverte",
+      description: "Testez gratuitement nos fonctionnalités de base",
       price: { monthly: 0, yearly: 0 },
       features: [
-        "2 Users",
-        "2 Files",
-        "Public Share & Comments",
-        "Chat Support",
-        "New income apps",
+        "2 utilisateurs",
+        "Génération de contenu basique",
+        "50 crédits IA / mois",
+        "Support par email",
+        "Accès aux tutoriels",
       ],
-      cta: "Signup for free",
+      cta: "Inscription gratuite",
       ctaVariant: "outline" as const,
       popular: false,
     },
     {
-      name: "Pro",
-      description: "Experiment the power of infinite possibilities",
-      price: { monthly: 8, yearly: 8 },
-      savings: "Save $50 a year",
+      name: "Formateur",
+      description: "L'essentiel pour les formateurs professionnels",
+      price: { monthly: 29, yearly: 25 },
+      savings: "Économisez 48€ par an",
       features: [
-        "4 Users",
-        "All apps",
-        "Unlimited editable exports",
-        "Folders and collaboration",
-        "All incoming apps",
+        "10 utilisateurs",
+        "Génération illimitée",
+        "Chatbot tuteur intégré",
+        "Module de formation IA",
+        "Intégration LMS complète",
+        "Support prioritaire",
       ],
-      cta: "Go to pro",
+      cta: "Choisir Formateur",
       ctaVariant: "primary" as const,
       popular: true,
     },
     {
-      name: "Business",
-      description: "Unveil new superpowers and join the Design League",
-      price: { monthly: 16, yearly: 16 },
+      name: "Établissement",
+      description: "Solution complète pour les organisations",
+      price: { monthly: 99, yearly: 89 },
       features: [
-        "All the features of pro plan",
-        "Account success Manager",
-        "Single Sign-On (SSO)",
-        "Co-conception program",
-        "Collaboration-Soon",
+        "Utilisateurs illimités",
+        "Toutes les fonctionnalités Pro",
+        "Gestionnaire de compte dédié",
+        "Personnalisation avancée",
+        "API d'intégration",
+        "Formation sur mesure",
+        "SLA garanti",
       ],
-      cta: "Goto Business",
+      cta: "Nous contacter",
       ctaVariant: "outline" as const,
       popular: false,
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <Container maxWidth="7xl" paddingX="xl">
+    <section className="py-20 bg-gradient-to-br from-primary/15 to-white">
+      <Container maxWidth="7xl" paddingX="lg">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-600 mb-4">
-            Choose Plan
+            Choisissez l'offre
             <br />
-            That's Right For You
+            qui vous correspond
           </h2>
           <p className="text-gray-500 mb-8">
-            Choose plan that works best for you, feel free to contact us
+            Des tarifs adaptés à vos besoins, que vous soyez formateur
+            indépendant ou établissement
           </p>
 
           {/* Billing Toggle */}
@@ -80,7 +84,7 @@ const Pricing = () => {
                   : "text-gray-500"
               }`}
             >
-              Bil Monthly
+              Mensuel
             </button>
             <button
               onClick={() => setBillingCycle("yearly")}
@@ -90,7 +94,7 @@ const Pricing = () => {
                   : "text-gray-500"
               }`}
             >
-              Bil Yearly
+              Annuel
             </button>
           </div>
         </div>

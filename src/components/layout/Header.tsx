@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
+import Logo from "../../assets/logo.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,13 +13,11 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
-      <Container maxWidth="7xl" paddingX="xl" paddingY="sm">
+      <Container maxWidth="7xl" paddingX="lg" paddingY="sm">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">IP</span>
-            </div>
+            <img src={Logo} alt="IA Pedago Logo" className="w-10 h-10" />
             <span className="text-xl font-semibold text-gray-800">
               IA Pedago
             </span>
@@ -33,22 +32,22 @@ const Header = () => {
               Accueil
             </Link>
             <Link
-              to="/products"
-              className="text-gray-600 hover:text-primary transition-colors"
-            >
-              Produits
-            </Link>
-            <Link
               to="/features"
               className="text-gray-600 hover:text-primary transition-colors"
             >
               Fonctionnalités
             </Link>
             <Link
-              to="/blog"
+              to="/formation"
               className="text-gray-600 hover:text-primary transition-colors"
             >
-              Blog
+              Formation
+            </Link>
+            <Link
+              to="/integration"
+              className="text-gray-600 hover:text-primary transition-colors"
+            >
+              Intégration LMS
             </Link>
             <Link
               to="/pricing"
@@ -123,13 +122,6 @@ const Header = () => {
                 Accueil
               </Link>
               <Link
-                to="/products"
-                className="text-gray-600 hover:text-primary transition-colors py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Produits
-              </Link>
-              <Link
                 to="/features"
                 className="text-gray-600 hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
@@ -137,11 +129,18 @@ const Header = () => {
                 Fonctionnalités
               </Link>
               <Link
-                to="/blog"
+                to="/formation"
                 className="text-gray-600 hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                Formation
+              </Link>
+              <Link
+                to="/integration"
+                className="text-gray-600 hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Intégration LMS
               </Link>
               <Link
                 to="/pricing"
