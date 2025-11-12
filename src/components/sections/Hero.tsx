@@ -98,7 +98,7 @@ const Hero = () => {
             </div> */}
             <div className="rounded-xl overflow-hidden min-h-[300px] flex items-center justify-center">
               <img
-                src="/images/ai-pedago-mooc-img.png"
+                src={`${import.meta.env.BASE_URL}images/ai-pedago-mooc-img.png`}
                 alt="Dashboard Preview"
                 className="w-full h-auto object-cover"
                 onError={(e) => {
